@@ -6,7 +6,7 @@
 
 |Package|NPM|
 |:----|:----|
-|`stack-fill`|![NPM Version](https://img.shields.io/npm/v/:stack-fill)|
+|`stack-fill`|![NPM Version](https://img.shields.io/npm/v/stack-fill)|
 
 ---
 
@@ -25,23 +25,38 @@ It may be useful when building a multi-pane GUI, such as Electron or a managed w
 
 Install the `stack-fill` NPM package.
 
+```bash
+$ npm install stack-fill
+```
+
 ### Assign filler space in the root
 
-```typescript
+`stack-fill` required the root component exact space:
+
+```tsx
 export const App = () => {
   return (
-    {/* Required the root component exact space.
-        (Or you can apply css in React root render anchor in HTML directly.)
-     */}
+    {/* Required the root component exact space */}
     <Box width="100vw" height="100vh">
-      {/* ... */}
+
+      ...
+
     </Box>);
 };
 ```
 
+Or you can apply css in React root render anchor in HTML directly:
+
+```html
+<body>
+  <!-- Required the root component exact space -->
+  <div id="root" style="width: 100vw; height: 100vh;"></div>
+</body>
+```
+
 ### Basic component stacking
 
-```typescript
+```tsx
 export const Foo = () => {
   return (
     <StackFill>
@@ -58,7 +73,7 @@ export const Foo = () => {
 Defaulted to `column` (up-to-down) direction.
 To change `row` (left-to-right):
 
-```typescript
+```tsx
 export const Foo = () => {
   return (
     <StackFill direction="row">
@@ -75,13 +90,13 @@ export const Foo = () => {
 Default filler component is the last child.
 To change it manually with `StackFiller`:
 
-```typescript
+```tsx
 export const Foo = () => {
   return (
     <StackFill>
       <Box>Will shrinked minimum requirement size.</Box>
       <StackFiller>
-        <Box>Thiscomponent takes all remains spaces.</Box>
+        <Box>This component takes all remains spaces.</Box>
       </StackFiller>
       <Box>Will shrinked minimum requirement size.</Box>
       <Box>Will shrinked minimum requirement size.</Box>
