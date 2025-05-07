@@ -83,7 +83,7 @@ const StackFill = ({
     minHeight: 0,
   },
   ...(Array.isArray(sx) ? sx : [sx])],
-  [isRow]);
+  [isRow, sx]);
 
   return (
     <Box {...props} sx={containerSx}>
