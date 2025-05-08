@@ -5,4 +5,5 @@
   License under Apache-2.0
 */
 
+export { default } from './StackFill';
 export * from './StackFill';
