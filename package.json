@@ -16,7 +16,7 @@
     "clean": "rimraf dist out",
     "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "rebuild": "rimraf dist && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
-    "pack": "rimraf out && mkdir out && rv --npm . && npm pack --pack-destination out"
+    "pack": "rimraf dist out && mkdir out && rv --npm . && npm pack --pack-destination out"
   },
   "description": "Component stacking and fill remains React MUI layout component",
   "author": "Kouji Matsui (@kekyo@mi.kekyo.net)",
