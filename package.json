@@ -1,6 +1,6 @@
 {
   "name": "stack-fill",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "sideEffects": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -16,7 +16,7 @@
     "clean": "rimraf dist out",
     "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
     "rebuild": "rimraf dist && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json",
-    "pack": "rimraf dist out && mkdir out && rv --npm . && npm pack --pack-destination out"
+    "pack": "rimraf out && mkdir out && rv --npm . && npm run rebuild && npm pack --pack-destination out"
   },
   "description": "Component stacking and fill remains React MUI layout component",
   "author": "Kouji Matsui (@kekyo@mi.kekyo.net)",
